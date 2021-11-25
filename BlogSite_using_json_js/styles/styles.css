@@ -1,0 +1,45 @@
+.container{
+    width: 46%;
+    margin: 20px 25%;
+    padding: 2%;
+    background-color: black;
+    color: white;
+}
+#sub-container{
+    margin-bottom: 50px;
+}
+
+#title{
+    color: rgb(7, 245, 233);
+}
+a,#count{
+    /* not working */
+    text-align: right;
+
+    /* working */
+    float: right;
+}
+#sub-para{
+    float: left;
+}
+
+#category{
+    color: yellow;
+}
+#count{
+    font-size: larger;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 20px;
+}
+#image{
+    width: 100%;
+}
+#continue{
+    margin-bottom: 10px;
+    color:yellow;
+}
+#line{
+    margin-top: 50px;
+}
+

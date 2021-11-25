@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Blog</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+      
+    </head>
+    <body>
+        <div class="container" id="body-container">
+            <!-- <h2 id="title"></h2>
+            <p>Posted on <span id="posted_date"></span>in <span id="category"></span>by <span id="posted_by"></span></p>
+            <h2 id="count"></h2>
+            <img id="image" src="" style="width: 100%;">
+            <p id="description"></p>
+            <a id="continue" >continue reading....</a> -->
+        </div>
+    </body>
+    <script>
+        data = [
+            {
+                "id": 1,
+                "title": "free website",
+                "imglink": "first.jpg",
+                "category":"photography",
+                "description" : "templatemo.com provides a lot of high quality free css templates for your personal or commercial websites. All templates are absolutely free to download, modify and apply for your websites. All of them are W3C standard compliant XHTML/CSS layouts. Enjoy!" ,
+                "count":64,
+                "posted_Date":"May 26 ",
+                "posted_By" : "templato.com"
+            },
+            {
+                "id": 2,
+                "title": " Lorem ipsum dolor sit amet, consectetur adipiscing",
+                "imglink": "second.jpg",
+                "category":"photography",
+                "description" : "Ut nec vestibulum odio. Vivamus vitae nibh eu sem malesuada rutrum et sit amet magna. Praesent ornare mollis lacus, id egestas leo molestie at. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent aliquam velit a magna sodales quis elementum ipsum auctor. Ut at metus leo, et dictum sem." ,
+                "count":32,
+                "posted_Date":"May 27 ",
+                "posted_By" : "www.templato.com"
+            } ,
+            {
+                "id": 3,
+                "title": " Lorem ipsum dolor sit amet, consectetur adipiscing",
+                "imglink": "third.jpg",
+                "category":"photography",
+                "description" : "Ut nec vestibulum odio. Vivamus vitae nibh eu sem malesuada rutrum et sit amet magna. Praesent ornare mollis lacus, id egestas leo molestie at. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent aliquam velit a magna sodales quis elementum ipsum auctor. Ut at metus leo, et dictum sem." ,
+                "count":2,
+                "posted_Date":"May 27 ",
+                "posted_By" : "www.templato.com"
+            } 
+
+        ];
+
+
+        function createElement(content,type,attribute){
+            var element = document.createElement(type);
+         
+      
+            // // if(attribute)
+            // // {
+            // //     element.attribute = content;
+            // // }
+            // element.attribute = content;
+
+
+            if(type == 'img'){
+                element.src = content;
+            }
+
+            element.innerText = content;
+
+            return element;
+        }
+
+        data.forEach(element => {
+            //div creation
+            // var division = document.createElement("div");
+            // division.id="container";
+            var division = createElement("","div","id");
+            division.appendChild(createElement(element.title,"h2",'innerText'));
+            // division.appendChild(createElement(element.title,"p",));
+            // var paragraph = document.createElement("p");
+            // paragraph.id="sub-container";
+            var paragraph = createElement("sub-para","p","id");
+            paragraph.appendChild(createElement(element.category,"span","innerText"));
+            paragraph.appendChild(createElement(element.posted_Date,"span","innerText"));
+            paragraph.appendChild(createElement(element.posted_By,"span","innerText"));
+            division.appendChild(paragraph);
+            division.appendChild(createElement(element.count,"h2","innerText"));
+            division.appendChild(createElement(element.imglink,"img","src"));
+            division.appendChild(createElement(element.description,"p","innerText"));
+            division.appendChild(createElement("continue....","a","innerText"));
+            //append in main div
+            var body_container = document.getElementById("body-container");
+            body_container.appendChild(division);
+        });
+    </script>
+</html>

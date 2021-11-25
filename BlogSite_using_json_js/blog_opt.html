@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Blog</title>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+      
+    </head>
+    <body>
+        <div class="container" id="body-container">
+        </div>
+    </body>
+    <script>
+        data = [
+            {
+                "id": 1,
+                "title": "Free Website Template",
+                "imglink": "first.jpg",
+                "category":"Web template",
+                "description" : "templatemo.com provides a lot of high quality free css templates for your personal or commercial websites. All templates are absolutely free to download, modify and apply for your websites. All of them are W3C standard compliant XHTML/CSS layouts. Enjoy!" ,
+                "count":64,
+                "posted_Date":"May 26 ",
+                "posted_By" : "templato.com"
+            },
+            {
+                "id": 2,
+                "title": " Lorem ipsum dolor sit amet, consectetur adipiscing",
+                "imglink": "second.jpg",
+                "category":"photography",
+                "description" : "Ut nec vestibulum odio. Vivamus vitae nibh eu sem malesuada rutrum et sit amet magna. Praesent ornare mollis lacus, id egestas leo molestie at. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent aliquam velit a magna sodales quis elementum ipsum auctor. Ut at metus leo, et dictum sem." ,
+                "count":32,
+                "posted_Date":"May 27 ",
+                "posted_By" : "www.templato.com"
+            } ,
+            {
+                "id": 3,
+                "title": " Class aptent taciti sociosqu ad litora torquent",
+                "imglink": "third.jpg",
+                "category":"photography",
+                "description" : "Ut nec vestibulum odio. Vivamus vitae nibh eu sem malesuada rutrum et sit amet magna. Praesent ornare mollis lacus, id egestas leo molestie at. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent aliquam velit a magna sodales quis elementum ipsum auctor. Ut at metus leo, et dictum sem." ,
+                "count":2,
+                "posted_Date":"june 25 ",
+                "posted_By" : "Sivakumar"
+            } 
+
+        ];
+
+
+        function createElement(type,id,content,attribute){
+            var element = document.createElement(type);
+            element.id = id;
+            if(content){
+                if(type == 'img'){
+                    element.src = content;
+                    return element;
+                }
+                element.innerText = content;
+            }
+            return element;
+        }
+
+        function createArticles(element){
+            var division = createElement("div","sub-container");
+            division.appendChild(createElement("h2","title",element.title,'innerText'));
+            var paragraph = createElement("p","sub-para","Posted On ");
+            paragraph.appendChild(createElement("span","posted_Date",element.posted_Date+" in ","innerText"));
+            paragraph.appendChild(createElement("span","category",element.category,"innerText"));
+            paragraph.appendChild(createElement("span","posted_By"," By "+element.posted_By,"innerText"));
+            division.appendChild(paragraph);
+            division.appendChild(createElement("span","count",element.count,"innerText"));
+            division.appendChild(createElement("img","image","images/"+element.imglink,"src"));
+            division.appendChild(createElement("p","description",element.description,"innerText"));
+            division.appendChild(createElement("a","continue","continue....","innerText"));
+            division.appendChild(createElement("hr","line"));
+            //append in main div
+            var body_container = document.getElementById("body-container");
+            body_container.appendChild(division);
+        }
+
+        data.forEach(element => {createArticles(element)});
+    </script>
+</html>
